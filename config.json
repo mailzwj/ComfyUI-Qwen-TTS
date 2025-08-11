@@ -1,0 +1,4 @@
+{
+    "bailian_api_key": "YOUR_BAILIAN_API_KEY",
+    "default_model": "qwen-tts-latest"
+}
