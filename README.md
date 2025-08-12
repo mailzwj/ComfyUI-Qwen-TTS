@@ -1,10 +1,14 @@
 # ComfyUI-Qwen-TTS
 Qwen-TTS nodes for ComfyUI
+使用该插件，依赖网络连接，请确保网络连接畅通
 
 ## 安装
 ```bash
 cd ComfyUI/custom_nodes
 git clone https://github.com/mailzwj/ComfyUI-Qwen-TTS.git
+
+cd ComfyUI-Qwen-TTS
+pip install -r requirements.txt
 ```
 
 ## 配置
