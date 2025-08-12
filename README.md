@@ -1,5 +1,5 @@
 # ComfyUI-Qwen-TTS
-Qwen-TTS nodes for ComfyUI
+Qwen-TTS nodes for ComfyUI\
 使用该插件，依赖网络连接，请确保网络连接畅通
 
 ## 安装
