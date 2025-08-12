@@ -1,0 +1,18 @@
+# pyproject.toml
+[project]
+name = "ComfyUI-Qwen-TTS" # Unique identifier for your node. Immutable after creation.
+description = "Qwen-TTS nodes for ComfyUI"
+version = "1.0.0" # Custom Node version. Must be semantically versioned.
+license = { file = "LICENSE" }
+dependencies  = [
+  "dashscope>=1.24.1",
+  "requests"
+]
+
+[project.urls]
+Repository = "https://github.com/mailzwj/ComfyUI-Qwen-TTS.git"
+
+[tool.comfy]
+PublisherId = "meet-comfy" # TODO (fill in Publisher ID from Comfy Registry Website).
+DisplayName = "遇见Comfy" # Display name for the Custom Node. Can be changed later.
+Icon = "" # SVG, PNG, JPG or GIF (MAX. 800x400px)
