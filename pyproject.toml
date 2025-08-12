@@ -13,6 +13,6 @@ dependencies  = [
 Repository = "https://github.com/mailzwj/ComfyUI-Qwen-TTS.git"
 
 [tool.comfy]
-PublisherId = "meet-comfy" # TODO (fill in Publisher ID from Comfy Registry Website).
-DisplayName = "遇见Comfy" # Display name for the Custom Node. Can be changed later.
+PublisherId = "meet-ai" # TODO (fill in Publisher ID from Comfy Registry Website).
+DisplayName = "遇见AI" # Display name for the Custom Node. Can be changed later.
 Icon = "" # SVG, PNG, JPG or GIF (MAX. 800x400px)
