@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 
 ## 配置
-打开`ComfyUI-Qwen-TTS/config.json`，将`YOUR_BAILIAN_API_KEY`替换成自己在百炼平台申请的apiKey保存
+打开`ComfyUI-Qwen-TTS/config.json`，将`YOUR_BAILIAN_API_KEY`替换成自己在[百炼平台](https://bailian.console.aliyun.com/)申请的apiKey保存
 
 ## 使用
 启动ComfyUI，添加“千问TTS”节点，即可使用
