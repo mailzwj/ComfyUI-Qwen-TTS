@@ -2,7 +2,7 @@
 [project]
 name = "ComfyUI-Qwen-TTS" # Unique identifier for your node. Immutable after creation.
 description = "Qwen-TTS nodes for ComfyUI"
-version = "1.0.0" # Custom Node version. Must be semantically versioned.
+version = "1.0.1" # Custom Node version. Must be semantically versioned.
 license = { file = "LICENSE" }
 dependencies  = [
   "dashscope>=1.24.1",
