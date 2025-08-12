@@ -1,6 +1,6 @@
 # ComfyUI-Qwen-TTS
 Qwen-TTS nodes for ComfyUI\
-使用该插件，依赖网络连接，请确保网络连接畅通
+使用该插件，依赖网络连接，请确保网络连接畅通。
 
 ## 安装
 ```bash
@@ -12,7 +12,7 @@ pip install -r requirements.txt
 ```
 
 ## 配置
-打开`ComfyUI-Qwen-TTS/config.json`，将`YOUR_BAILIAN_API_KEY`替换成自己在[百炼平台](https://bailian.console.aliyun.com/)申请的apiKey保存
+打开`ComfyUI-Qwen-TTS/config.json`，将`YOUR_BAILIAN_API_KEY`替换成自己在[百炼平台](https://bailian.console.aliyun.com/)申请的apiKey保存。
 
 ## 使用
-启动ComfyUI，添加“千问TTS”节点，即可使用
+启动ComfyUI，搜索添加“千问TTS”节点（或者右键-新建节点-Qwen-千问TTS），然后将输出音频连接到音频预览或保存音频节点即可使用。
