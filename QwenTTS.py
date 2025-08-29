@@ -12,6 +12,8 @@ USER_CONFIG = json.load(open(USER_CFG_PATH, "r", encoding="utf-8"))
 if not USER_CONFIG.get("bailian_api_key"):
     raise ValueError("Please set your Bailian API key in the config.json file.")
 
+MENU_GROUP = "Qwen"
+
 class QwenTTS:
     """
     QwenTTS Node for ComfyUI
@@ -45,7 +47,7 @@ class QwenTTS:
 
     #OUTPUT_NODE = False
 
-    CATEGORY = "Qwen"
+    CATEGORY = MENU_GROUP
 
     def run(self, model_id, content, voice):
         tts_res = dashscope.audio.qwen_tts.SpeechSynthesizer.call(
@@ -65,6 +67,34 @@ class QwenTTS:
         # 使用torchaudio加载
         waveform, sample_rate = torchaudio.load(audio_buffer)
         return ({"waveform": waveform.unsqueeze(0), "sample_rate": sample_rate}, sample_rate)
+    
+class AudioInfo:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "audio": ("AUDIO", {}),
+            },
+        }
+
+    RETURN_TYPES = ("AUDIO", "INT", "FLOAT")
+    RETURN_NAMES = ("音频", "采样率", "时长")
+
+    FUNCTION = "getInfo"
+
+    #OUTPUT_NODE = False
+
+    CATEGORY = MENU_GROUP
+
+    def getInfo(self, audio):
+        waveform = audio.get("waveform")
+        sample_rate = audio.get("sample_rate")
+        audioObj = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=sample_rate)(waveform)
+        duration = audioObj.size(2) / sample_rate
+        return (audio, sample_rate, duration)
 
     #@classmethod
     #def IS_CHANGED(s, image, string_field, int_field, float_field, print_to_screen):
@@ -85,10 +115,12 @@ class QwenTTS:
 
 # --- ComfyUI 节点映射 ---
 NODE_CLASS_MAPPINGS = {
-    "QwenTTS": QwenTTS
+    "QwenTTS": QwenTTS,
+    "AudioInfo": AudioInfo,
 }
 
 # ComfyUI 节点显示名称映射
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "QwenTTS": "千问TTS"
+    "QwenTTS": "千问TTS",
+    "AudioInfo": "音频信息",
 }
